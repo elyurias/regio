@@ -1,0 +1,11 @@
+<div class="card card-container card-body">
+    <img id="profile-img" class="profile-img-card" src="vista/img/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    <form method="post" accept-charset="utf-8" action="login.php" name="loginform" autocomplete="off" role="form" class="form-signin" onsubmit = 'return false;'>
+        <span id="reauth-email" class="reauth-email"></span>
+        <input class="form-control" placeholder="Usuario" name="user_name" type="text" value="" autofocus="" autocomplete="off" required>
+        <input class="form-control" placeholder="Contraseña" name="user_password" type="password" value="" autocomplete="off" required>
+        <input name="isLogginReNew" type="hidden" value="<?php print($login->isLoginData);?>"/>
+        <button type="submit" class="btn btn-lg btn-block btn-success btn-signin" name="login" id="submit">Iniciar Sesión</button>
+    </form><!-- /form -->
+</div><!-- /card-container -->
