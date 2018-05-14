@@ -40,11 +40,10 @@ class bors extends getV_rs{
         }else{
             return 1;
         }
-        return -3;
+        return -1;
     }
     function getImagesAll($id){
         $imagenes = $this->dao->getImagesToActivity($id);
-        header("Content-Type: image/jpeg");
-        echo $imagenes[0][0];;
+        return file_put_contents('archivo1.jpg',$imagenes[0][0]);
     }
 }

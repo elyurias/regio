@@ -31,8 +31,8 @@
                 ]);
                 return $result;
             }catch(PDOException $e){
-                //print($e->getMessage());
-                return False;
+                return $e->getMessage();
+                //return False;
             }
         }
         function getImagesToActivity($id){
