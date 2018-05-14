@@ -75,5 +75,9 @@
                     . " WHERE id_actividad = ?;"
                     ;
         }
+        static function selectImage(){
+            return "SELECT BFoto1_actividad, tipo_foto1, BFoto2_actividad, tipo_foto2 FROM actividad"
+            . " WHERE id_actividad = ?;";
+        }
     }
 ?>

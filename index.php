@@ -20,6 +20,9 @@
     <link rel='stylesheet' href="vista/libreriasjquery/DataTables/media/css/dataTables.bootstrap.css">
     <link rel="stylesheet" href="vista/libreriasjquery/bootstrap3-dialog/src/css/bootstrap-dialog.css">
     <link rel="stylesheet" href="vista/libreriasjquery/multiple-select-master/multiple-select.css">
+    
+    <link rel="stylesheet" href="vista/libreriasjquery/datetimepicker/jquery.datetimepicker.css">
+    
     <script src="vista/js/jquery.min.js"></script>
     <script src="vista/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="vista/libreriasjquery/DataTables/media/js/jquery.dataTables.js">	
@@ -37,6 +40,10 @@
     </script>
     <script src="vista/libreriasjquery/multiple-select-master/multiple-select.js">
     </script>
+    
+    <script src="vista/libreriasjquery/datetimepicker/build/jquery.datetimepicker.full.min.js">
+    </script>
+  
   </head>
   <body>
 	<?php

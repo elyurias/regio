@@ -97,11 +97,17 @@ EOT;
                             </span>
                         </a>
 EOT;
-            }else{
+            }else if($row['id_actividad_ss']==2){
                 $btn = <<<EOT
                         <a class="btn btn-info" data-toggle="tooltip" data-placement="top" 
                             onclick="menuD.get_actividad_id_rev({$row['id_actividad']});"
                             title="Informacion!">                          
+                            <span class="glyphicon glyphicon-modal-window">
+                            </span>
+                        </a>
+                        <a class="btn btn-info" data-toggle="tooltip" data-placement="top" 
+                            onclick="menuD.get_actividad_id({$row['id_actividad']});"
+                            title="Actualizar Avance!">                          
                             <span class="glyphicon glyphicon-modal-window">
                             </span>
                         </a>
@@ -132,7 +138,7 @@ EOT;
     public function getDataTable($data,$id): String{
         $tableTr = "";
         foreach ($data as $row) {
-            $tableTr = <<<EOT
+            $tableTr.= <<<EOT
               <tr>
                     <td>
                         {$row['firstname']} <br> {$row['lastname']}

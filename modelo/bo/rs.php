@@ -23,6 +23,7 @@ class bors extends getV_rs{
         $formatos_validos = [
             'gif','jpg','jpe','jpeg','png'
         ];
+        /* @var $nameVal1 type */
         $nameVal1 = explode(".", $obj->nombre1);
         $nameVal2 = explode(".", $obj->nombre2);
         $nameVal1 = end($nameVal1);
@@ -40,5 +41,10 @@ class bors extends getV_rs{
             return 1;
         }
         return -3;
+    }
+    function getImagesAll($id){
+        $imagenes = $this->dao->getImagesToActivity($id);
+        header("Content-Type: image/jpeg");
+        echo $imagenes[0][0];;
     }
 }

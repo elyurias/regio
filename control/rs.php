@@ -25,8 +25,8 @@
                     //$obj->foto1 = $_POST['foto1'];
                     //$obj->foto2 = $_POST['foto2'];
                     $obj->id_actividad = $_POST['id_actividad'];
-                    $obj->foto1 = fopen($_FILES['foto1']['tmp_name'], 'rb');
-                    $obj->foto2 = fopen($_FILES['foto2']['tmp_name'], 'rb');
+                    $obj->foto1 = file_get_contents($_FILES['foto1']['tmp_name']);
+                    $obj->foto2 = file_get_contents($_FILES['foto2']['tmp_name']);
                     $obj->nombre1 = $_FILES['foto1']['name'];
                     $obj->nombre2 = $_FILES['foto2']['name'];
                     print($varBoRs->setEnviarEvidencia($obj));
@@ -34,6 +34,10 @@
                 case 'actualizar':
                     $obj->id_actividad_response = $_POST['id_actividad_resp'];
                     print($varBoRs->getMyForm($obj));
+                break;
+                case 'getMyImages':
+                    $obj->id = $_POST['id_actividad'];
+                    print($varBoRs->getImagesAll($obj->id));
                 break;
                 default:
                     print('No Operation_CONTROL');

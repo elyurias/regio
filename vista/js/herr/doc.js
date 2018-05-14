@@ -67,7 +67,24 @@ class menuTotalUser extends conector{
                 $('#myModal').modal();
                 $('#myModal').modal('show');
             }
-        );    
+        );
+    }
+    //getMyImages
+    get_actividad_id_rev($id){
+        this.callController(
+            "control/rs.php",
+            {
+                action: 'getMyImages',
+                id_actividad: $id
+            },
+            function(){
+                $(".loader").fadeOut("slow");
+            },
+            function(data){
+                $(".loader").fadeOut("hide");
+                $('#FormsGenerate').html(data);
+            }
+        );
     }
 }
 var menuD = new menuTotalUser();

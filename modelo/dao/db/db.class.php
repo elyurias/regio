@@ -25,6 +25,7 @@
                         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"
                     )
                 );
+                $PDO_U->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $PDO_U;
             }catch(PDOException $e){
                 $this->err[] = 1; //error_database
