@@ -63,6 +63,7 @@ class menuTotalUser extends conector{
             },
             function(data){
                 $(".loader").fadeOut("hide");
+                $('#FormsGenerate').empty();
                 $('#FormsGenerate').html(data);
                 $('#myModal').modal();
                 $('#myModal').modal('show');
@@ -82,7 +83,10 @@ class menuTotalUser extends conector{
             },
             function(data){
                 $(".loader").fadeOut("hide");
+                $('#FormsGenerate').empty();
                 $('#FormsGenerate').html(data);
+                $('#myModal').modal();
+                $('#myModal').modal('show');
             }
         );
     }

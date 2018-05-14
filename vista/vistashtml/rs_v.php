@@ -102,7 +102,7 @@ EOT;
                         <a class="btn btn-info" data-toggle="tooltip" data-placement="top" 
                             onclick="menuD.get_actividad_id_rev({$row['id_actividad']});"
                             title="Informacion!">                          
-                            <span class="glyphicon glyphicon-modal-window">
+                            <span class="glyphicon glyphicon-lamp">
                             </span>
                         </a>
                         <a class="btn btn-info" data-toggle="tooltip" data-placement="top" 
@@ -159,5 +159,30 @@ EOT;
 EOT;
         }
         return $tableTr;
+    }
+    function getImages($images){
+        return <<<EOT
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title panel-primary" id="myModalLabel">Mi evidencia</h4>
+                  </div>
+                <script>
+                    $('#myModal').on('hidden.bs.modal', function () {
+                        $('#FormsGenerate').empty();
+                    });
+                </script>
+                <div class="modal-body">
+                    <center>
+                        <img src="control/{$images[0]}" height="120" width="120">
+                        <img src="control/{$images[1]}" height="120" width="120">
+                    </center>
+                </div>
+                </div>
+              </div>
+            </div>
+EOT;
     }
 }

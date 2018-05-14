@@ -7,6 +7,8 @@
      * 
      * se espera que las imagenes que se van a subir al sistema sean 3 veces mas pequeñas que el valor mas grande
      * encontrado... supongo que esto sera suficiente, si ocurre algun error, puede aumentar el tamaño.
+     * 
+     * Si vas a subirlo a sistemas linux, solo dale permisos de escritura a la carpeta /control/files
      *      */
 /* 
  * To change this license header, choose License Headers in Project Properties.

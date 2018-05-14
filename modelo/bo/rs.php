@@ -44,6 +44,15 @@ class bors extends getV_rs{
     }
     function getImagesAll($id){
         $imagenes = $this->dao->getImagesToActivity($id);
-        return file_put_contents('archivo1.jpg',$imagenes[0][0]);
+        $response = file_put_contents('files/'.$id.'do.'.$imagenes[0][1],$imagenes[0][0]) && 
+                file_put_contents('files/'.$id.'du.'.$imagenes[1][1],$imagenes[1][0]);
+        if(!$response){
+            return 1;
+        }else{
+            return $this->getImages([
+                'files/'.$id.'do.'.$imagenes[0][1],
+                'files/'.$id.'du.'.$imagenes[1][1]
+            ]);
+        }
     }
 }
