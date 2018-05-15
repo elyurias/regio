@@ -52,8 +52,8 @@ EOT;
                 </script>
                 <div class="modal-body">
                     <center>
-                        <img src="control/{$images[0]}" height="120" width="120">
-                        <img src="control/{$images[1]}" height="120" width="120">
+                        <img src="control/{$images[0]}" height="50%" width="50%">
+                        <img src="control/{$images[1]}" height="50%" width="50%">
                     </center>
                 </div>
                 </div>

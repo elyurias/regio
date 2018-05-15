@@ -97,7 +97,7 @@ EOT;
                             </span>
                         </a>
 EOT;
-            }else if($row['id_actividad_ss']==2){
+            }else if($row['id_actividad_ss']==2 || $row['id_actividad_ss']==4){
                 $btn = <<<EOT
                         <a class="btn btn-info" data-toggle="tooltip" data-placement="top" 
                             onclick="menuD.get_actividad_id_rev({$row['id_actividad']});"
@@ -109,6 +109,15 @@ EOT;
                             onclick="menuD.get_actividad_id({$row['id_actividad']});"
                             title="Actualizar Avance!">                          
                             <span class="glyphicon glyphicon-modal-window">
+                            </span>
+                        </a>
+EOT;
+            }else if($row['id_actividad_ss']==3){
+                $btn = <<<EOT
+                        <a class="btn btn-info" data-toggle="tooltip" data-placement="top" 
+                            onclick="menuD.get_actividad_id_rev({$row['id_actividad']});"
+                            title="Informacion!">                          
+                            <span class="glyphicon glyphicon-lamp">
                             </span>
                         </a>
 EOT;

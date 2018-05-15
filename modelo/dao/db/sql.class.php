@@ -63,7 +63,9 @@
             return "SELECT * FROM getmyrd WHERE fk_rs = ?";
         }
         static function getMyActivity(): String{
-            return "SELECT * FROM actividad WHERE id_actividad = ?;";
+            return "SELECT id_actividad, Vdescripcion_actividad, "
+            . " Dhorayfecha_actividad, VLugar_Direccion, IStatus_actividad, fk_rd_rs"
+            . " FROM actividad WHERE id_actividad = ?;";
         }
         static function uptActividad(): String{
             return "UPDATE actividad SET "
