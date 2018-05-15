@@ -33,6 +33,10 @@
                     $obj->id_actividad  = $_POST['id_actividad'];
                     print($varBoRd->eliminarActividad($obj));
                 break;
+                case 'verImagenes':
+                    $obj->id_actividad  = $_POST['id_actividad'];
+                    print($varBoRd->verActividad($obj));
+                break;
                 default:
                     print('No Operation_CONTROL');
                 break;

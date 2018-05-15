@@ -59,13 +59,13 @@ EOT;
                 })
             </script>
 		<div class="panel-body">
-            <table id="tablePrincipal2" class="table table-striped table-bordered nowrap" style="width:100%">
+            <table id="tablePrincipal2" class="table table-striped table-bordered nowrap" cellspacing="0" style="width:100%">
                 <thead>
                     <tr>
-                        <th>
+                        <th data-priority="1">
                             Full Name
                         </th>
-                        <th>
+                        <th data-priority="2">
                             Username
                         </th>
                         <th>
@@ -162,34 +162,19 @@ EOT;
                 return $nval;
         }
         
-        public function get_cadena_vista($limite, $limiteDeCadena, $cadena){
-            $procesa = "";
-            for($i=0;$i < STRLEN($cadena); $i++){
-                $nvar = "";
-                if($i==$limite){
-                    $valSiguienteLetra = substr($cadena, $i+1,1);
-                    if(strcmp($valSiguienteLetra," ")>0){
-                        $nvar.="-";
-                    }
-                    $nvar.= "<br>";
-                    $limite = $limite + $limiteDeCadena;
-                }
-                $procesa.= substr($cadena, $i,1).$nvar;
-            }
-            return $procesa;
-        }
+        
         public function get_All_data_cc($data,$userName){
             $d = "";
             $i = 0;
-            $limiteDeCadena = 14;
+            $limiteDeCadena = 12;
             foreach($data as $row){
                 $limite = $limiteDeCadena;
                 $procesaDescripcion = $this->get_cadena_vista($limite, $limiteDeCadena, $row['Vdescripcion_actividad']);
                 $procesaLugar = $this->get_cadena_vista($limite, $limiteDeCadena, $row['VLugar_Direccion']);
                 $ncad = substr($row['Dhorayfecha_actividad'],0,10);
                 
-                $status = $row['nombre_actividad'];
-                $btn_btn_status = $row['nombre_actividad']==2? <<<EOT
+                $status = $this->get_cadena_vista($limite, $limiteDeCadena, $row['nombre_actividad']);
+                $btn_btn_status = $row['id_actividad_ss']==2? <<<EOT
                         <a class="btn btn-primary" onclick="menuC.leer_actividad({$row['id_actividad']});" data-toggle="tooltip" data-placement="top" title="Revisar!"><span class="glyphicon glyphicon-eye-open"></span></a>
 EOT
                 :"";
@@ -246,7 +231,7 @@ EOT;
 EOT;
         }
         function getModalActividades($data,$userName){
-            $variab = $this->getTablaScript('tablePrincipal');
+            $variab = $this->getTablaScript('tablePrincipal',',"order": [[ 2, "desc" ]]');
             $nval =<<<EOT
             <!-- Modal -->
             $variab

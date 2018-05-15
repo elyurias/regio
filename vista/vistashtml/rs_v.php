@@ -6,7 +6,7 @@ class getV_rs extends utilidades{
     }
     public function getTableViewAll($val): String{
         $id = "IdentificadorDeLaTabla";
-        $script = "".$this->getTablaScript($id);
+        $script = "".$this->getTablaScript($id,"");
         $thead = $this->thead(array('Nombre','Correo','Acciones'), $id);
         $tbody = $this->getDataTable($val, $id);
         return $this->table($script, $id, $thead, $tbody);
@@ -14,7 +14,7 @@ class getV_rs extends utilidades{
     }
     public function getTableViewAllActividades($val): String{
         $id = "IdentificadorDeLaTablaDos";
-        $script = $this->getTablaScript($id);
+        $script = $this->getTablaScript($id,',"order": [[ 1, "desc" ]]');
         $thead = $this->thead(array('Descripcion','Hora y Fecha','Lugar','Estado',''), $id);
         $tbody = $this->getDataTableActi($val, $id);
         return $this->table($script, $id, $thead, $tbody);
@@ -159,30 +159,5 @@ EOT;
 EOT;
         }
         return $tableTr;
-    }
-    function getImages($images){
-        return <<<EOT
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title panel-primary" id="myModalLabel">Mi evidencia</h4>
-                  </div>
-                <script>
-                    $('#myModal').on('hidden.bs.modal', function () {
-                        $('#FormsGenerate').empty();
-                    });
-                </script>
-                <div class="modal-body">
-                    <center>
-                        <img src="control/{$images[0]}" height="120" width="120">
-                        <img src="control/{$images[1]}" height="120" width="120">
-                    </center>
-                </div>
-                </div>
-              </div>
-            </div>
-EOT;
     }
 }
