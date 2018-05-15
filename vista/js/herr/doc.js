@@ -2,6 +2,7 @@ $(function(){
     $(".loader").fadeOut("hide");
     menuD.getDataAll('#SC_c');
 });
+global_id_control = 0;
 class menuTotalUser extends conector{
     addToClassLine($classActiveNew){
         //La repeti tres veces... se deberia corregir esto y meterlo en control o otra clase
@@ -35,6 +36,7 @@ class menuTotalUser extends conector{
         );
     }
     get_actividades($id_actividades){
+        global_id_control = $id_actividades;
         this.callController(
             "control/rs.php",
             {

@@ -64,7 +64,8 @@ $(()=>{
                         menuD.defin_msg_final('Aviso!',
                             operacion,
                             BootstrapDialog.TYPE_SUCCESS);
-                        dialog.close()
+                        dialog.close();
+                        menuD.get_actividades(global_id_control);
                         $('#myModal').modal('hide');
                     }else if(data.trim() == '-7'){
                         menuD.defin_msg_final('Aviso!',
@@ -127,7 +128,7 @@ $(()=>{
                 icon: 'glyphicon '+icono,
                 cssClass: 'btn-primary',
                 action: function(dialog){
-                    moduleDir(dialog);                   
+                    moduleDir(dialog);
                 }
             }
         ];

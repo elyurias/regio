@@ -52,8 +52,13 @@ EOT;
                 </script>
                 <div class="modal-body">
                     <center>
-                        <img src="control/{$images[0]}" height="50%" width="50%">
-                        <img src="control/{$images[1]}" height="50%" width="50%">
+                        <img id="ph1" src="control/{$images[0]}" height="50%" width="50%">
+                        <img id="ph2" src="control/{$images[1]}" height="50%" width="50%">
+                        <script>
+                            $(document).ready(function(){
+                                 $('img').wrap('<span style="display:inline-block"></span>').css('display', 'block').parent().zoom();
+                            });
+                        </script>
                     </center>
                 </div>
                 </div>

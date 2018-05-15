@@ -43,6 +43,9 @@
     
     <script src="vista/libreriasjquery/datetimepicker/build/jquery.datetimepicker.full.min.js">
     </script>
+    
+    <script src="vista/libreriasjquery/zoom/jquery.zoom.js">
+    </script>
   
   </head>
   <body>
