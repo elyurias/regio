@@ -35,28 +35,4 @@
                 //return False;
             }
         }
-        function getImagesToActivity($id){
-            try{
-                $sql = sql::selectImage();
-                $con = $this->getForcedObjectPDO();
-                $stmt = $con->prepare($sql);
-                $stmt->execute([$id]);
-                
-                $stmt->bindColumn(1, $foto1, PDO::PARAM_LOB);
-                $stmt->bindColumn(2, $tipo1);
-                
-                $stmt->bindColumn(3, $foto2, PDO::PARAM_LOB);
-                $stmt->bindColumn(4, $tipo2);
-                
-                $stmt->fetch(PDO::FETCH_BOUND);
-                
-                return [
-                    [$foto1, $tipo1],
-                    [$foto2, $tipo2],
-                    [sql::selectImage(), $id]
-                ];
-            }catch(PDOException $e){
-                return $e->getMessage();
-            }
-        }
     }

@@ -4,6 +4,9 @@
      * los archivos de configuracion de mysql, my.ini
      * 
      * innodb_log_file_size=256M
+     * SET GLOBAL innodb_fast_shutdown = 1;
+     * 
+     * Reiniciar Servidor de MariaDB
      * 
      * se espera que las imagenes que se van a subir al sistema sean 3 veces mas pequeñas que el valor mas grande
      * encontrado... supongo que esto sera suficiente, si ocurre algun error, puede aumentar el tamaño.

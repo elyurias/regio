@@ -44,8 +44,14 @@ class bors extends getV_rs{
     }
     function getImagesAll($id){
         $imagenes = $this->dao->getImagesToActivity($id);
+        /*
+            Es mejor iterarlo con un for.. evidente jajaja, pero de momento funciona
+         *      Si se quieren agregar mas imagenes, recomiendo modificar el codigo a partir de esta rama MVC.
+         *          */
+        unlink('files/'.$id.'do.'.$imagenes[0][1]);
+        unlink('files/'.$id.'du.'.$imagenes[1][1]);
         $response = file_put_contents('files/'.$id.'do.'.$imagenes[0][1],$imagenes[0][0]) && 
-                file_put_contents('files/'.$id.'du.'.$imagenes[1][1],$imagenes[1][0]);
+                    file_put_contents('files/'.$id.'du.'.$imagenes[1][1],$imagenes[1][0]);
         if(!$response){
             return 1;
         }else{
