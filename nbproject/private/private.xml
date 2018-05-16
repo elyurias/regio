@@ -12,12 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/regio2/vista/vistashtml/rs_v.php</file>
             <file>file:/C:/xampp/htdocs/regio2/vista/js/herr/srb.js</file>
             <file>file:/C:/xampp/htdocs/regio2/vista/vistashtml/rd_v.php</file>
-            <file>file:/C:/xampp/htdocs/regio2/control/rd.php</file>
-            <file>file:/C:/xampp/htdocs/regio2/vista/vistashtml/utilidades.php</file>
-            <file>file:/C:/xampp/htdocs/regio2/vista/vistashtml/admin_v.php</file>
+            <file>file:/C:/xampp/htdocs/regio2/modelo/bo/rs.php</file>
+            <file>file:/C:/xampp/htdocs/regio2/modelo/dao/rs.php</file>
         </group>
     </open-files>
 </project-private>
