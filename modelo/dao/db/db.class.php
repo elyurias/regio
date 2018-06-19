@@ -82,10 +82,10 @@
                 $stmt = $con->prepare($sql);
                 $stmt->execute([$id]);
                 
-                $stmt->bindColumn(1, $foto1, PDO::PARAM_LOB);
+                $stmt->bindColumn(1, $foto1);
                 $stmt->bindColumn(2, $tipo1);
                 
-                $stmt->bindColumn(3, $foto2, PDO::PARAM_LOB);
+                $stmt->bindColumn(3, $foto2);
                 $stmt->bindColumn(4, $tipo2);
                 
                 $stmt->fetch(PDO::FETCH_BOUND);

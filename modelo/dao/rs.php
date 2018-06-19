@@ -21,18 +21,21 @@
             try{
                 $con = $this->getForcedObjectPDO();
                 $stmt = $con->prepare($sql);
+                $normbre_uno_original = "do".$id_actividad.".".$mine1;
+                $normbre_dos_original = "du".$id_actividad.".".$mine2;
                 $result = $stmt->execute([
                     $mine1,
                     $mine2,
-                    $blob1,
-                    $blob2,
+                    $normbre_uno_original,
+                    $normbre_dos_original,
                     $IStatus_actividad,
                     $id_actividad,
                 ]);
+                move_uploaded_file($blob1, "files/".$normbre_uno_original);
+                move_uploaded_file($blob2, "files/".$normbre_dos_original);
                 return $result;
             }catch(PDOException $e){
                 return $e->getMessage();
-                //return False;
             }
         }
     }

@@ -128,7 +128,7 @@ EOT;
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="fecha">Fecha de entrega</label>  
                     <div class="col-md-7">
-                    <input id="fecha" name="fecha" type="text" class="form-control input-md" data-validation="required">
+                    <input id="fecha" name="fecha" type="text" class="form-control input-md" autocomplete="off" data-validation="required">
                     <span class="help-block"></span>  
                     </div>
                   </div>

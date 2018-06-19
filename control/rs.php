@@ -25,8 +25,10 @@
                     //$obj->foto1 = $_POST['foto1'];
                     //$obj->foto2 = $_POST['foto2'];
                     $obj->id_actividad = $_POST['id_actividad'];
-                    $obj->foto1 = file_get_contents($_FILES['foto1']['tmp_name']);
-                    $obj->foto2 = file_get_contents($_FILES['foto2']['tmp_name']);
+                    //$obj->foto1 = file_get_contents($_FILES['foto1']['tmp_name']);
+                    //$obj->foto2 = file_get_contents($_FILES['foto2']['tmp_name']);
+                    $obj->foto1 = $_FILES['foto1']['tmp_name'];
+                    $obj->foto2 = $_FILES['foto2']['tmp_name'];
                     $obj->nombre1 = $_FILES['foto1']['name'];
                     $obj->nombre2 = $_FILES['foto2']['name'];
                     print($varBoRs->setEnviarEvidencia($obj));
