@@ -37,4 +37,17 @@ class bord extends getV_rd{
         }
         return 0;
     }
+    function getImagesAll($id){
+        $imagenes = $this->dao->getImagesToActivity($id);
+        /*
+            Es mejor iterarlo con un for.. evidente jajaja, pero de momento funciona
+         *      Si se quieren agregar mas imagenes, recomiendo modificar el codigo a partir de esta rama MVC.
+         *  unlink('files/'.$id.'do.'.$imagenes[0][1]);
+            unlink('files/'.$id.'du.'.$imagenes[1][1]);
+         *          */
+            return $this->getImages([
+                'files/'.$imagenes[0][0],
+                'files/'.$imagenes[1][0]
+            ],"myModalDos");
+    }
 }

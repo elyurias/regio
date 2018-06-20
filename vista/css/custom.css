@@ -154,3 +154,15 @@ div.container a.input-group-btn {
 .btn-grid > .btn{
   margin: 2px 0;
 }
+
+.panel-transparent {
+  background: none;
+}
+
+.panel-transparent .profile-name-card{
+  background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .card-body{
+  background: rgba(46, 51, 56, 0.2)!important;
+}

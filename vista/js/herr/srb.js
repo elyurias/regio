@@ -149,5 +149,24 @@ class toRd extends conector{
             BootstrapDialog.TYPE_SUCCESS
         );
     }
+    leer_actividad($id){
+        this.callController(
+            "control/rd.php",
+            {
+                action: 'getMyImages',
+                id_actividad: $id
+            },
+            function(){
+                $(".loader").fadeOut("slow");
+            },
+            function(data){
+                $(".loader").fadeOut("hide");
+                $('#dos').empty();
+                $('#dos').html(data);
+                $('#myModalDos').modal();
+                $('#myModalDos').modal('show');
+            }
+        );
+    }
 }
 var menuC = new toRd();

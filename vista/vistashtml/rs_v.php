@@ -86,6 +86,8 @@ EOT;
         }
     public function getDataTableActi($data,$id): String{
         $tableTr = "";
+        $limite = 12;
+        $limiteDeCadena = $limite;
         foreach ($data as $row) {
             $btn = "";
             if($row['id_actividad_ss']==1){
@@ -122,10 +124,11 @@ EOT;
                         </a>
 EOT;
             }
+            $desc = $this->get_cadena_vista($limite, $limiteDeCadena, $row['Vdescripcion_actividad']);
             $tableTr = <<<EOT
               <tr>
                     <td>
-                        {$row['Vdescripcion_actividad']}
+                        {$desc}
                     </td>
                     <td>
                         {$row['Dhorayfecha_actividad']}

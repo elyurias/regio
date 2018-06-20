@@ -36,9 +36,9 @@ EOT;
         return $script.'<table id="'.$id.'" class="table table-striped table-bordered nowrap" style="width:100%">'
                 .$thead.$tbody.'</table>';
     }
-    function getImages($images){
+    function getImages($images,$modal){
         return <<<EOT
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="$modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">

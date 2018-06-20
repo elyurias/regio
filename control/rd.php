@@ -37,6 +37,10 @@
                     $obj->id_actividad  = $_POST['id_actividad'];
                     print($varBoRd->verActividad($obj));
                 break;
+                case 'getMyImages':
+                    $obj->id = $_POST['id_actividad'];
+                    print($varBoRd->getImagesAll($obj->id));
+                break;
                 default:
                     print('No Operation_CONTROL');
                 break;

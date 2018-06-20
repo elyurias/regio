@@ -53,6 +53,6 @@ class bors extends getV_rs{
             return $this->getImages([
                 'files/'.$imagenes[0][0],
                 'files/'.$imagenes[1][0]
-            ]);
+            ],"myModal");
     }
 }

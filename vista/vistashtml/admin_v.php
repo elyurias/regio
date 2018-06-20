@@ -59,9 +59,9 @@ EOT;
                     </td>
                     <td>
                         <a class="btn btn-danger" onclick="menuA.delete_user({$row['user_id']});" data-toggle="tooltip" data-placement="top" title="Eliminar!"><span class="glyphicon glyphicon-remove"></span></a>
-                        <a class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Modificar!"><span class="glyphicon glyphicon-modal-window"></span></a>
+                        <!-- <a class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Modificar!"><span class="glyphicon glyphicon-modal-window"></span></a>
                         <a class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Leer!"><span class="glyphicon glyphicon-search"></span></a>
-                        <input type='hidden' value='{$row['status']}' id='_val_status{$i}'>
+                        --><input type='hidden' value='{$row['status']}' id='_val_status{$i}'>
                         <script>
                             val_status{$i} = {$row['status']};
                         </script>
